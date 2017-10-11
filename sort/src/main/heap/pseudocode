@@ -1,0 +1,8 @@
+PARENT(i)
+  return ⌊i⁄2⌋
+
+LEFT(i)
+  return 2i
+
+RIGHT(i)
+  return 2i+1
