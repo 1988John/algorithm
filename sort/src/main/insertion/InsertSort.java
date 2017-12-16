@@ -1,6 +1,8 @@
 package main.insertion;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Description: 插入排序
@@ -10,6 +12,11 @@ public class InsertSort {
 
     public static void main(String[] args) {
         int[] arr = {6 ,1 , 2 ,7 , 9 , 3 , 4 , 5 ,10 , 8};
+        Map<String,String> map = new TreeMap<>();
+        map.put("key","value");
+
+
+
         System.out.println("结果"+ Arrays.toString(insertSort(arr)));
     }
 
