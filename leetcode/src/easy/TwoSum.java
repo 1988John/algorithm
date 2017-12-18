@@ -1,6 +1,7 @@
 package easy;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * http://blog.csdn.net/mimi9919/article/details/51335337
@@ -53,7 +54,10 @@ public class TwoSum {
         }else {
             for(int i=0;i<nums.length-1;i++){
                 int number = target - nums[i];
-                boolean b = Arrays.asList(nums).contains(number);
+                int[] mm = {number};
+                List<int[]> ints = Arrays.asList(nums);
+                boolean contains = ints.contains(mm);
+                boolean b = Arrays.asList(nums).contains(mm);
                 if(b){
                     result[0] = i;
                     for(int j=i;j<nums.length;j++){
