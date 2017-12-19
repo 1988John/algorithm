@@ -53,21 +53,6 @@ public class TwoSum {
             return null;
         }else {
             for(int i=0;i<nums.length-1;i++){
-                int number = target - nums[i];
-                int[] mm = {number};
-                List<int[]> ints = Arrays.asList(nums);
-                boolean contains = ints.contains(mm);
-                boolean b = Arrays.asList(nums).contains(mm);
-                if(b){
-                    result[0] = i;
-                    for(int j=i;j<nums.length;j++){
-                        if(nums[j] == target-nums[i]){
-                            result[1] = j;
-                            return result;
-                        }
-                    }
-
-                }
 
             }
         }
