@@ -20,6 +20,8 @@ public class Test {
         List<int[]> ints1 = Arrays.asList(ints);
         boolean contains = ints1.contains(3);
 
+        Arrays.sort(ints);
+        System.out.println(Arrays.toString(ints));
 
     }
 }
