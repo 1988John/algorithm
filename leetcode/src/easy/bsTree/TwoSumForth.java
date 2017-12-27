@@ -1,4 +1,4 @@
-package easy.number;
+package easy.bsTree;
 
 import domain.ListNode;
 import domain.TreeNode;
