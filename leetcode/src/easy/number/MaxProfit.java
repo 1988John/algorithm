@@ -20,28 +20,15 @@ public class MaxProfit {
     }
 
     public static int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) return 0;
-        int profit = 0;
-        int minIndex;//最小值下标
-        int maxIndex;//最大值下标
-        int startIndex;//开始截取位置
-        for(int i=0;i<prices.length-1;i++){
-            startIndex = i+1;
-            int[] des = new int[prices.length-i-1];
-            System.arraycopy(prices,startIndex,des,0,prices.length-startIndex);
-            maxIndex = findArrayMax(des);
-            profit = prices[startIndex+maxIndex]-prices[i];
-            if(profit > 0){
-
-            }
-            minIndex = prices[i];
-            for(int j=i+1;j<prices.length;j++){
-
-
-            }
-
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
         }
-        return profit;
+        return maxprofit;
     }
 
     /**
