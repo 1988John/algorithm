@@ -1,4 +1,4 @@
-package easy.number;
+package easy.dynamicProgramming;
 
 /**
  * Description:
