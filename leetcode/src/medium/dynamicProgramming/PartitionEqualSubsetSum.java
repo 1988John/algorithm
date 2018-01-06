@@ -25,17 +25,22 @@ public class PartitionEqualSubsetSum {
             count /= 2;
             boolean[][] dp = new boolean[nums.length][count+1];
             dp[0][0] = false;
+            for(int i=0;i<=count;i++){
+                dp[0][i] = false;
+            }
             if(nums[0]<= count){
                 dp[0][nums[0]] = true;
-            }else {
-                dp[0][nums[0]] = false;
             }
-
-            int result ;
-            for(int i=0;i<nums.length;i++){
+            for(int i=1;i<nums.length;i++){
                 for(int j=0;j<count;j++){
-                    dp[i][j] = dp[i][j-1];
+                    if(j>=nums[i]){
+                        dp[i][j] = dp[i-1][j-1] || dp[i-1][j-nums[i]];
+                    }else {
+                        dp[i][j] = dp[i-1][j];
+                    }
                 }
+                if(dp[i][count])
+                    return true;
             }
         }
         return false;
