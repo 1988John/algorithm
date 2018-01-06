@@ -7,7 +7,7 @@ package medium.dynamicProgramming;
 public class PartitionEqualSubsetSum {
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7};
+        int[] nums = {1,2,5};
         boolean result = canPartition(nums);
         System.out.println(result);
     }
@@ -31,10 +31,13 @@ public class PartitionEqualSubsetSum {
             if(nums[0]<= count){
                 dp[0][nums[0]] = true;
             }
+            for(int i=0;i<nums.length;i++){
+                dp[i][0] = true;
+            }
             for(int i=1;i<nums.length;i++){
-                for(int j=0;j<count;j++){
+                for(int j=0;j<=count;j++){
                     if(j>=nums[i]){
-                        dp[i][j] = dp[i-1][j-1] || dp[i-1][j-nums[i]];
+                        dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i]];
                     }else {
                         dp[i][j] = dp[i-1][j];
                     }
