@@ -12,6 +12,7 @@ public class Triangle {
         int[][] min = new int[high][triangle.get(high-1).size()];
         min[0][0] = triangle.get(0).get(0);
 
+
         for(int i=1;i<triangle.size();i++){
             for (int j=0;j<triangle.get(i).size();j++){
                 if (j==0)
