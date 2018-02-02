@@ -12,8 +12,7 @@ import java.rmi.registry.LocateRegistry;
 
 public class Program{    
     public static void main(String[] args) {    
-        // TODO Auto-generated method stub    
-        try {    
+        try {
             UserService userService=new UserServiceImpl();
             //注册通讯端口    
             LocateRegistry.createRegistry(6600);    
@@ -22,13 +21,10 @@ public class Program{
             System.out.println("Service Start!");    
         }  catch (RemoteException e) {  
             System.out.println("创建远程对象发生异常！");  
-            e.printStackTrace();  
-        } catch (AlreadyBoundException e) {  
+        } catch (AlreadyBoundException e) {
             System.out.println("发生重复绑定对象异常！");  
-            e.printStackTrace();  
-        } catch (MalformedURLException e) {  
+        } catch (MalformedURLException e) {
             System.out.println("发生URL畸形异常！");  
-            e.printStackTrace();  
-        }   
+        }
     }    
 }    
