@@ -7,5 +7,5 @@ import java.rmi.RemoteException;
   
 
 public interface UserService extends Remote {  
-    public User getUserById(String id)throws RemoteException;
+    User getUserById(String id)throws RemoteException;
 }  

@@ -3,28 +3,21 @@ package program;
 import service.UserService;
 import service.impl.UserServiceImpl;
 
-import java.net.MalformedURLException;
-import java.nio.channels.AlreadyBoundException;  
-import java.rmi.Naming;    
-import java.rmi.RemoteException;  
-import java.rmi.registry.LocateRegistry;    
-  
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
 
-public class Program{    
-    public static void main(String[] args) {    
+
+public class Program{
+    public static void main(String[] args) {
         try {
             UserService userService=new UserServiceImpl();
-            //注册通讯端口    
-            LocateRegistry.createRegistry(6600);    
-            //注册通讯路径    
-            Naming.rebind("rmi://127.0.0.1:6600/userService", userService);    
-            System.out.println("Service Start!");    
-        }  catch (RemoteException e) {  
-            System.out.println("创建远程对象发生异常！");  
-        } catch (AlreadyBoundException e) {
-            System.out.println("发生重复绑定对象异常！");  
-        } catch (MalformedURLException e) {
-            System.out.println("发生URL畸形异常！");  
+            //注册通讯端口
+            LocateRegistry.createRegistry(6600);
+            //注册通讯路径
+            Naming.rebind("rmi://127.0.0.1:6600/userService", userService);
+            System.out.println("Service Start!");
+        }  catch (Exception e) {
+            System.out.println("创建远程对象发生异常！");
         }
     }    
 }    
