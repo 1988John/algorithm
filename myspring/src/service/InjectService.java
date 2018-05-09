@@ -13,7 +13,6 @@ public class InjectService {
         Class<?> clazz = Class.forName(beanName);
         Object object = clazz.newInstance();
         for (Field field : clazz.getDeclaredFields()) {
-            boolean accessFlag = field.isAccessible();// 获取原来的访问控制权限
             field.setAccessible(true); // 修改访问控制权限
 
             String typeName = field.getType().getTypeName();
@@ -22,7 +21,6 @@ public class InjectService {
             if (typeName.equals("java.lang.Integer"))
                 field.set(object,18);
 
-            field.setAccessible(accessFlag);// 恢复访问控制权限
         }
         System.out.println(object);
     }
