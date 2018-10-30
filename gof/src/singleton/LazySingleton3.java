@@ -21,4 +21,5 @@ public class LazySingleton3 {
     public static LazySingleton3 getInstance() {
         return SingletonHolder.instance;
     }
+
 }

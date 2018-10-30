@@ -10,6 +10,9 @@ public class LazySingleton3Test {
         //通过反射创建第二个实例
         LazySingleton3 instance3 = null;
         try {
+
+
+
             Class<LazySingleton3> clazz = LazySingleton3.class;
             Constructor<LazySingleton3> cons = clazz.getDeclaredConstructor();
             cons.setAccessible(true);
